@@ -1,36 +1,11 @@
-function loadPosts() {
-  let posts = JSON.parse(localStorage.getItem("posts")) || [];
-  posts.forEach(text => createPost(text));
+let currentUser = "";
+let currentPic = "";
+
+function setUser() {
+  let name = document.getElementById("username").value.trim();
+  let pic = document.getElementById("profilePic").value.trim();
+  if(name === "") return alert("Enter a username!");
+  currentUser = name;
+  currentPic = pic || "https://via.placeholder.com/40"; // default pic
+  document.getElementById("userSection").style.display = "none";
 }
-
-function addPost() {
-  let input = document.getElementById("postInput");
-  let text = input.value;
-  if (text === "") return;
-
-  createPost(text);
-
-  let posts = JSON.parse(localStorage.getItem("posts")) || [];
-  posts.unshift(text);
-  localStorage.setItem("posts", JSON.stringify(posts));
-
-  input.value = "";
-}
-
-function createPost(text) {
-  let post = document.createElement("div");
-  post.className = "post";
-
-  post.innerHTML = `
-    <p>${text}</p>
-    <button onclick="likePost(this)">❤️ Like</button>
-  `;
-
-  document.getElementById("posts").appendChild(post);
-}
-
-function likePost(button) {
-  button.innerText = "❤️ Liked";
-}
-
-window.onload = loadPosts;
