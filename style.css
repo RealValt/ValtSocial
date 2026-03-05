@@ -1,13 +1,29 @@
 body {
-  background: #111;
-  color: white;
+  margin: 0;
   font-family: Arial;
-  text-align: center;
+  background: #1e1f22;
+  color: white;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background: #2b2d31;
+  padding: 20px;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
 }
 
 input {
   padding: 8px;
-  width: 250px;
+  width: 300px;
 }
 
 button {
@@ -16,9 +32,8 @@ button {
 }
 
 .post {
-  background: #222;
-  margin: 10px auto;
+  background: #2b2d31;
   padding: 10px;
-  width: 300px;
-  border-radius: 5px;
+  margin-top: 10px;
+  border-radius: 6px;
 }
