@@ -1,15 +1,20 @@
-body {
-  background: #111;
-  color: white;
-  font-family: Arial;
-  text-align: center;
+/* Avatar image */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
-input, button {
-  padding: 8px;
-  margin: 5px;
+/* Post header with avatar + username */
+.postHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
+/* Post styling */
 .post {
   background: #222;
   margin: 10px auto;
